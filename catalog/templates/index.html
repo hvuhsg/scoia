@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>My Gallery</h1>
+  <p>Welcome to my gallery, hare i will upload my photos <em>Developd by yehoyada</em></p>
+  <h2>My Photos</h2>
+  <p>The library has the following record counts:</p>
+  <ul>
+    <li><strong>Photos:</strong> {{ num_photos }}</li>
+  </ul>
+  <div class="container-float">
+    <div class="col">
+        {% for photo in photos %}
+        <div id="image-{{photo.id}}" class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+            <figure>
+                <img src="http://127.0.0.1:8000/media/{{ photo }}.jpg" width="1000" height="500" alt="Computer Hope"/>
+                <figcaption>{{photo.summary}}</figcaption>
+            </figure>
+        </div>
+        {% endfor %}
+     </div>
+	</div>
+{% endblock %}
